@@ -1,5 +1,6 @@
 # LES
 
-2022 02 21
-El archivo enerhabitat.idf simula Ener-habitat.
-El archivo LES-enerhabitat.idf contiene la simulación del LES con las condiciones para que simule Ener-habitat.
+2022 02 22
+Camparación entre datos experimentales (LES), datos de la simulación realizada en ener-habitat (EH)y simulación 
+IDF de LES en condiciones de ener-habitat, todas la superficies adiabáticas y no mass, menos la del sistema
+constructivo. Gráfica: 2022_02_22_condiciones_enerhabitat.png. 
