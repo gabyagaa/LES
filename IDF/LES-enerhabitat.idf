@@ -99,16 +99,6 @@ ConvergenceLimits,
     1;                       !- Minimum System Timestep {minutes}
 
 
-!-   ===========  ALL OBJECTS IN CLASS: SITE:LOCATION ===========
-
-Site:Location,
-    Cuernavaca Matamoros Intl AP,  !- Name
-    18.835,                  !- Latitude {deg}
-    -99.262,                 !- Longitude {deg}
-    -7,                      !- Time Zone {hr}
-    1303.6;                  !- Elevation {m}
-
-
 !-   ===========  ALL OBJECTS IN CLASS: SIZINGPERIOD:DESIGNDAY ===========
 
 SizingPeriod:DesignDay,
@@ -150,7 +140,7 @@ RunPeriod,
     2,                       !- End Month
     1,                       !- End Day of Month
     2006,                    !- End Year
-    Sunday,                  !- Day of Week for Start Day
+    ,                        !- Day of Week for Start Day
     No,                      !- Use Weather File Holidays and Special Days
     No,                      !- Use Weather File Daylight Saving Period
     No,                      !- Apply Weekend Holiday Rule
@@ -970,7 +960,7 @@ BuildingSurface:Detailed,
     Surface,                 !- Outside Boundary Condition
     M_SC2,                   !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
-    WindExposed,             !- Wind Exposure
+    NoWind,                  !- Wind Exposure
     ,                        !- View Factor to Ground
     ,                        !- Number of Vertices
     2.175,                   !- Vertex 1 X-coordinate {m}
