@@ -1,0 +1,17 @@
+# Prerequisites
+*.epw
+*.rvaudit
+*.bnd
+*.eio
+*.err
+*.eso
+*.mtd
+*.sql
+*.html
+*.mdd
+*.rdd
+*.shd
+*.md
+*.audit
+*.mtr
+*.csv
