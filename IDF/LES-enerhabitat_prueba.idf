@@ -1051,9 +1051,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M2_i,                  !- Name
     Wall,                    !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    SC_jr,                   !- Construction Name
     TZ_guarda,               !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     H_M2,                    !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -1339,9 +1339,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     H_M2,                    !- Name
     Wall,                    !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    SC_jr,                   !- Construction Name
     TZ_habitacion,           !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     G_M2_i,                  !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
