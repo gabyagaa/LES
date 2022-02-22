@@ -13,4 +13,5 @@
 *.rdd
 *.shd
 *.md
-
+*.audit
+*.mtr
