@@ -451,7 +451,7 @@ Material,
     50,                      !- Conductivity {W/m-K}
     7300,                    !- Density {kg/m3}
     240,                     !- Specific Heat {J/kg-K}
-    0.1,                     !- Thermal Absorptance
+    0.9,                     !- Thermal Absorptance
     0.7,                     !- Solar Absorptance
     0.7;                     !- Visible Absorptance
 
@@ -1051,7 +1051,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M2_i,                  !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    SC-Lamina,               !- Construction Name
     TZ_guarda,               !- Zone Name
     Surface,                 !- Outside Boundary Condition
     H_M2,                    !- Outside Boundary Condition Object
@@ -1339,7 +1339,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     H_M2,                    !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    SC-Lamina,               !- Construction Name
     TZ_habitacion,           !- Zone Name
     Surface,                 !- Outside Boundary Condition
     G_M2_i,                  !- Outside Boundary Condition Object
@@ -1537,23 +1537,23 @@ SurfaceProperty:ConvectionCoefficients,
     G_M2_i,                  !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    100,                     !- Convection Coefficient 1 {W/m2-K}
+    13,                      !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    2;                       !- Convection Coefficient 2 {W/m2-K}
+    6.6;                     !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     H_M2,                    !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    2,                       !- Convection Coefficient 1 {W/m2-K}
+    6.6,                     !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    100;                     !- Convection Coefficient 2 {W/m2-K}
+    13;                      !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     G_M3_i,                  !- Surface Name
