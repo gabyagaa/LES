@@ -11,3 +11,6 @@ con el muro opuesto al sc sin condición adiabática, con masa térmica y sc de 
 2022 03 08
 *2022_03_08_EH_vs_simplificado.png: comparando los resultados de ener habitat y el idf simulando ener habitat.
 *2022_03_08_EpLES_vs_EpSimplificado.png: comparando idf que simula todo el LES con idf simplificado. Ambos en condiciones de ener habitat.
+
+2022 03 31 
+2022_03_31_EpLES_Mopuesto.png: análisis de la temperatura interior del LES en condiciones de ener-habitat y en las misma condiciones pero con el muro opuesto al sistema constructivo con masa térmica de lámina y condición de frontera de superficie.
