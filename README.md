@@ -7,3 +7,6 @@
 2022 03 08 
 *Comparar los resultados de la simulación de EnerHabitat y EnergyPlus simulando EnerHabitat. Gráfica: 2022_03_08_EH_vs_simplificado.png.
 *Comparar los resultados de idf que simula todo el LES con el idf simplificado con las medidas de LES. Ambos en condiciones de EnerHAbitat. Gráfica:2022_03_08_EpLES_vs_EpSimplificado.pmg.
+
+2022 03 31
+*Análisis cambiando el muro opuesto al sistema constructivo por material de lámina con masa térmica y condición de frontera de superficie. Gráfica: 2022_03_31_EpLES_Mopuesto.png.
