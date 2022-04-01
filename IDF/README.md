@@ -9,3 +9,6 @@
 *eh_simplificado.idf: simula Ener-habitat.
 *eh_simplificado_LES.idf: simula Ener-habitat con las medidas del LES.
 *LES-enerhabitat.idf: simulación del LES con las condiciones para que simule Ener-habitat.
+
+2022 03 31 
+*LES-enerhabitat_Mopuesto.idf: igual a LES-enerhabitat.idf pero con el muro opuesto al sistema constructivo usando material con masa térmica de lámina y condición de frontera de superficie.
