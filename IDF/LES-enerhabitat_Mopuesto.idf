@@ -739,7 +739,7 @@ Zone,
 BuildingSurface:Detailed,
     CC_Muro_F,               !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_clima,                !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -763,7 +763,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     CC_M_Puerta,             !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_clima,                !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -787,7 +787,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     CC_M_SC_a,               !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_clima,                !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     G_M4_a,                  !- Outside Boundary Condition Object
@@ -811,7 +811,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     CC_M_SC_b,               !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_clima,                !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     G_M4_b,                  !- Outside Boundary Condition Object
@@ -835,7 +835,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     CC_M_SC_c,               !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_clima,                !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     G_M4_c,                  !- Outside Boundary Condition Object
@@ -859,7 +859,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     CC_M_SC_d,               !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_clima,                !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     G_M4_d,                  !- Outside Boundary Condition Object
@@ -883,7 +883,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     CC_M_Ventana,            !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_clima,                !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -907,7 +907,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     CC_Piso,                 !- Name
     Floor,                   !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_clima,                !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -931,7 +931,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     CC_Techo,                !- Name
     Roof,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_clima,                !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -979,7 +979,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M1_e,                  !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -1027,7 +1027,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M2_e,                  !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -1051,7 +1051,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M2_i,                  !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Surface,                 !- Outside Boundary Condition
     H_M2,                    !- Outside Boundary Condition Object
@@ -1075,7 +1075,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M3_e,                  !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -1123,7 +1123,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M4_a,                  !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     CC_M_SC_a,               !- Outside Boundary Condition Object
@@ -1147,7 +1147,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M4_b,                  !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     CC_M_SC_b,               !- Outside Boundary Condition Object
@@ -1171,7 +1171,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M4_c,                  !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     CC_M_SC_c,               !- Outside Boundary Condition Object
@@ -1195,7 +1195,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M4_d,                  !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     CC_M_SC_d,               !- Outside Boundary Condition Object
@@ -1219,7 +1219,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_P_e,                   !- Name
     Floor,                   !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -1267,7 +1267,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_T_e,                   !- Name
     Roof,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
     Adiabatic,               !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
@@ -1339,7 +1339,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     H_M2,                    !- Name
     Wall,                    !- Surface Type
-    SC_jr,                   !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_habitacion,           !- Zone Name
     Surface,                 !- Outside Boundary Condition
     G_M2_i,                  !- Outside Boundary Condition Object
@@ -1993,7 +1993,7 @@ EnergyManagementSystem:Actuator,
 
 EnergyManagementSystem:ProgramCallingManager,
     EMS_CM,                  !- Name
-    BeginTimestepBeforePredictor,  !- EnergyPlus Model Calling Point
+    BeginZoneTimestepBeforeInitHeatBalance,  !- EnergyPlus Model Calling Point
     Guarda_C;                !- Program Name 1
 
 

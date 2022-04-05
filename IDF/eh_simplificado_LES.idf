@@ -1806,6 +1806,17 @@ Material,
     0.3,                     !- Solar Absorptance
     0.3;                     !- Visible Absorptance
 
+Material,
+    laminaJR,                !- Name
+    Smooth,                  !- Roughness
+    0.005,                   !- Thickness {m}
+    50,                      !- Conductivity {W/m-K}
+    7300,                    !- Density {kg/m3}
+    240,                     !- Specific Heat {J/kg-K}
+    0.9,                     !- Thermal Absorptance
+    0.7,                     !- Solar Absorptance
+    0.7;                     !- Visible Absorptance
+
 
 !-   ===========  ALL OBJECTS IN CLASS: MATERIAL:NOMASS ===========
 
@@ -1838,6 +1849,10 @@ Construction,
 Construction,
     Lamina,                  !- Name
     Lamina;                  !- Outside Layer
+
+Construction,
+    SC-Lamina,               !- Name
+    laminaJR;                !- Outside Layer
 
 
 !-   ===========  ALL OBJECTS IN CLASS: GLOBALGEOMETRYRULES ===========
@@ -1937,9 +1952,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Surface 4,               !- Name
     Wall,                    !- Surface Type
-    Lamina,                  !- Construction Name
+    SC-Lamina,               !- Construction Name
     Thermal Zone 1 Thermal Zone,  !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Outdoors,                !- Outside Boundary Condition
     ,                        !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -2041,6 +2056,17 @@ WindowProperty:FrameAndDivider,
 
 SurfaceProperty:ConvectionCoefficients,
     Surface 2,               !- Surface Name
+    Outside,                 !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    13,                      !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Inside,                  !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    6.6;                     !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    Surface 4,               !- Surface Name
     Outside,                 !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
     13,                      !- Convection Coefficient 1 {W/m2-K}
