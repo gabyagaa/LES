@@ -10,3 +10,6 @@
 
 2022 03 31
 *Análisis cambiando el muro opuesto al sistema constructivo por material de lámina con masa térmica y condición de frontera de superficie. Gráfica: 2022_03_31_EpLES_Mopuesto.png.
+
+2022 04 05
+*Análisis del cambio del muro opuesto al sistema constructivo. Se modificó el material a muros_gen (aluminio) y el calling point a Begin Zone Timestep Before Init Heat Balance. Gráfica 2022_04_05_EpLES_Mopuesto.png.
