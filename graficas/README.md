@@ -13,4 +13,7 @@ con el muro opuesto al sc sin condición adiabática, con masa térmica y sc de 
 *2022_03_08_EpLES_vs_EpSimplificado.png: comparando idf que simula todo el LES con idf simplificado. Ambos en condiciones de ener habitat.
 
 2022 03 31 
-2022_03_31_EpLES_Mopuesto.png: análisis de la temperatura interior del LES en condiciones de ener-habitat y en las misma condiciones pero con el muro opuesto al sistema constructivo con masa térmica de lámina y condición de frontera de superficie.
+*2022_03_31_EpLES_Mopuesto.png: análisis de la temperatura interior del LES en condiciones de ener-habitat y en las misma condiciones pero con el muro opuesto al sistema constructivo con masa térmica de lámina y condición de frontera de superficie.
+
+2022 04 05
+*2022_04_05_EpLES_Mopuesto.png: igual al análisis 2022_03_31_EpLES_Mopuesto.png pero el material del muro opuesto se cambió a aluminio y el calling point a bigin timestep before init heat balance.
