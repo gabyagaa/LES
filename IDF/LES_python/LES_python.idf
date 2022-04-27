@@ -419,8 +419,8 @@ Material,
     2400,                    !- Density {kg/m3}
     1000,                    !- Specific Heat {J/kg-K}
     0.9,                     !- Thermal Absorptance
-    0.3,                     !- Solar Absorptance
-    0.3;                     !- Visible Absorptance
+    0.9,                     !- Solar Absorptance
+    0.9;                     !- Visible Absorptance
 
 Material,
     paquime,                 !- Name
@@ -451,7 +451,7 @@ Material,
     50,                      !- Conductivity {W/m-K}
     7300,                    !- Density {kg/m3}
     240,                     !- Specific Heat {J/kg-K}
-    0.9,                     !- Thermal Absorptance
+    0.1,                     !- Thermal Absorptance
     0.7,                     !- Solar Absorptance
     0.7;                     !- Visible Absorptance
 
@@ -1949,120 +1949,19 @@ OutdoorAir:Node,
     Model Outdoor Air Node;  !- Name
 
 
-!-   ===========  ALL OBJECTS IN CLASS: ENERGYMANAGEMENTSYSTEM:SENSOR ===========
-
-EnergyManagementSystem:Sensor,
-    Tout,                    !- Name
-    Environment,             !- Output:Variable or Output:Meter Index Key Name
-    Site Outdoor Air Drybulb Temperature;  !- Output:Variable or Output:Meter Name
-
-EnergyManagementSystem:Sensor,
-    Thab,                    !- Name
-    TZ_habitacion,           !- Output:Variable or Output:Meter Index Key Name
-    Zone Mean Air Temperature;  !- Output:Variable or Output:Meter Name
-
-
-!-   ===========  ALL OBJECTS IN CLASS: ENERGYMANAGEMENTSYSTEM:ACTUATOR ===========
-
-EnergyManagementSystem:Actuator,
-    Tgc,                     !- Name
-    Cooling_2,               !- Actuated Component Unique Name
-    Schedule:Compact,        !- Actuated Component Type
-    Schedule Value;          !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Tgh,                     !- Name
-    Heating_2,               !- Actuated Component Unique Name
-    Schedule:Compact,        !- Actuated Component Type
-    Schedule Value;          !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Tcc,                     !- Name
-    Cooling,                 !- Actuated Component Unique Name
-    Schedule:Compact,        !- Actuated Component Type
-    Schedule Value;          !- Actuated Component Control Type
-
-EnergyManagementSystem:Actuator,
-    Tch,                     !- Name
-    Heating,                 !- Actuated Component Unique Name
-    Schedule:Compact,        !- Actuated Component Type
-    Schedule Value;          !- Actuated Component Control Type
-
-
-!-   ===========  ALL OBJECTS IN CLASS: ENERGYMANAGEMENTSYSTEM:PROGRAMCALLINGMANAGER ===========
-
-EnergyManagementSystem:ProgramCallingManager,
-    EMS_CM,                  !- Name
-    BeginZoneTimestepBeforeInitHeatBalance,  !- EnergyPlus Model Calling Point
-    Guarda_C;                !- Program Name 1
-
-
-!-   ===========  ALL OBJECTS IN CLASS: ENERGYMANAGEMENTSYSTEM:PROGRAM ===========
-
-EnergyManagementSystem:Program,
-    Guarda_C,                !- Name
-    SET Tgh= Thab,           !- Program Line 1
-    SET Tgc=Thab,            !- Program Line 2
-    SET Tch =Tout,           !- A4
-    SET Tcc = Tout;          !- A5
-
-
-!-   ===========  ALL OBJECTS IN CLASS: ENERGYMANAGEMENTSYSTEM:OUTPUTVARIABLE ===========
-
-EnergyManagementSystem:OutputVariable,
-    Termostato Guarda Cooling,  !- Name
-    Tgc,                     !- EMS Variable Name
-    Averaged,                !- Type of Data in Variable
-    ZoneTimestep,            !- Update Frequency
-    Guarda_C,                !- EMS Program or Subroutine Name
-    C;                       !- Units
-
-EnergyManagementSystem:OutputVariable,
-    Termostato Guarda Heating,  !- Name
-    Tgh,                     !- EMS Variable Name
-    Averaged,                !- Type of Data in Variable
-    ZoneTimestep,            !- Update Frequency
-    Guarda_C,                !- EMS Program or Subroutine Name
-    C;                       !- Units
-
-EnergyManagementSystem:OutputVariable,
-    Temperatura Habitacion,  !- Name
-    Thab,                    !- EMS Variable Name
-    Averaged,                !- Type of Data in Variable
-    ZoneTimestep,            !- Update Frequency
-    Guarda_C,                !- EMS Program or Subroutine Name
-    C;                       !- Units
-
-EnergyManagementSystem:OutputVariable,
-    Temperatura Clima Cooling,  !- Name
-    Tcc,                     !- EMS Variable Name
-    Averaged,                !- Type of Data in Variable
-    ZoneTimestep,            !- Update Frequency
-    Guarda_C,                !- EMS Program or Subroutine Name
-    C;                       !- Units
-
-EnergyManagementSystem:OutputVariable,
-    Temperatura Clima Heating,  !- Name
-    Tch,                     !- EMS Variable Name
-    Averaged,                !- Type of Data in Variable
-    ZoneTimestep,            !- Update Frequency
-    Guarda_C,                !- EMS Program or Subroutine Name
-    C;                       !- Units
-
-EnergyManagementSystem:OutputVariable,
-    Temperatura exterior,    !- Name
-    Tout,                    !- EMS Variable Name
-    Averaged,                !- Type of Data in Variable
-    ZoneTimestep,            !- Update Frequency
-    Guarda_C,                !- EMS Program or Subroutine Name
-    C;                       !- Units
-
-
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLEDICTIONARY ===========
 
 Output:VariableDictionary,
     IDF,                     !- Key Field
     Unsorted;                !- Sort Option
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:ENERGYMANAGEMENTSYSTEM ===========
+
+Output:EnergyManagementSystem,
+    NotByUniqueKeyNames,     !- Actuator Availability Dictionary Reporting
+    None,                    !- Internal Variable Availability Dictionary Reporting
+    None;                    !- EMS Runtime Language Debug Output Level
 
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
@@ -2087,103 +1986,13 @@ OutputControl:ReportingTolerances,
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLE ===========
 
 Output:Variable,
-    EMS,                     !- Key Value
-    Temperatura Habitacion,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    EMS,                     !- Key Value
-    Temperatura exterior,    !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    TZ_clima,                !- Key Value
+    *,                       !- Key Value
     Zone Mean Air Temperature,  !- Variable Name
     Timestep;                !- Reporting Frequency
 
 Output:Variable,
-    TZ_guarda,               !- Key Value
-    Zone Mean Air Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC,                    !- Key Value
-    Surface Inside Face Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC,                    !- Key Value
-    Surface Outside Face Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC2,                   !- Key Value
-    Surface Inside Face Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC2,                   !- Key Value
-    Surface Outside Face Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    TZ_habitacion,           !- Key Value
-    Zone Mean Air Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC,                    !- Key Value
-    Surface Inside Face Convection Heat Transfer Coefficient,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC2,                   !- Key Value
-    Surface Inside Face Convection Heat Transfer Coefficient,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC,                    !- Key Value
-    Surface Inside Face Conduction Heat Transfer Rate,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC2,                   !- Key Value
-    Surface Inside Face Conduction Heat Transfer Rate,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    H_M2,                    !- Key Value
-    Surface Inside Face Conduction Heat Transfer Rate,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC,                    !- Key Value
-    Surface Inside Face Convection Heat Gain Rate,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    H_M2,                    !- Key Value
-    Surface Inside Face Convection Heat Transfer Coefficient,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    H_M2,                    !- Key Value
-    Surface Inside Face Convection Heat Gain Rate,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    M_SC2,                   !- Key Value
-    Surface Inside Face Convection Heat Gain Rate,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    H_M2,                    !- Key Value
-    Surface Inside Face Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-
-Output:Variable,
-    H_M2,                    !- Key Value
-    Surface Outside Face Temperature,  !- Variable Name
+    *,                       !- Key Value
+    Site Outdoor Air Drybulb Temperature,  !- Variable Name
     Timestep;                !- Reporting Frequency
 
 
@@ -2198,4 +2007,22 @@ Output:SQLite,
 Output:Diagnostics,
     DisplayAllWarnings,      !- Key 1
     DisplayExtraWarnings;    !- Key 2
+
+
+!-   ===========  ALL OBJECTS IN CLASS: PYTHONPLUGIN:SEARCHPATHS ===========
+
+PythonPlugin:SearchPaths,
+    LES_path,                !- Name
+    Yes,                     !- Add Current Working Directory to Search Path
+    Yes,                     !- Add Input File Directory to Search Path
+    C:\Users\anaga\Documents\Git\LES\IDF\LES_python;  !- Search Path 1
+
+
+!-   ===========  ALL OBJECTS IN CLASS: PYTHONPLUGIN:INSTANCE ===========
+
+PythonPlugin:Instance,
+    LES_instance,            !- Name
+    No,                      !- Run During Warmup Days
+    LES_AC,                  !- Python Module Name
+    LES_AC;                  !- Plugin Class Name
 
