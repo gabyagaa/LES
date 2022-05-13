@@ -12,3 +12,8 @@
 
 2022 03 31 
 *LES-enerhabitat_Mopuesto.idf: igual a LES-enerhabitat.idf pero con el muro opuesto al sistema constructivo usando material con masa térmica de lámina y condición de frontera de superficie.
+
+2022 05 13
+LES_python.idf: simulación en condiciones de ener-habitat cambiando EMS por script de python.
+LES_python_Mopuesto.idf: simulación con script de python en condiciones de ener-habitat pero con el muro opuesto al SC con masa térmica, surface y coeficiente h.
+LES_python_Muros.idf: simulación con todos los muros de la habitación con surface y coeficientes h.
