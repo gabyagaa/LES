@@ -13,8 +13,6 @@ EnergyManagementSystem:Actuator Available, *,Material,Surface Property Visible A
 EnergyManagementSystem:Actuator Available, *,Surface,Interior Surface Convection Heat Transfer Coefficient,[W/m2-K]
 EnergyManagementSystem:Actuator Available, *,Surface,Exterior Surface Convection Heat Transfer Coefficient,[W/m2-K]
 EnergyManagementSystem:Actuator Available, *,Surface,Construction State,[ ]
-EnergyManagementSystem:Actuator Available, *,Surface,View Factor To Ground,[ ]
-EnergyManagementSystem:Actuator Available, *,Surface,Outdoor Air Wetbulb Temperature,[C]
 EnergyManagementSystem:Actuator Available, *,Zone,Outdoor Air Drybulb Temperature,[C]
 EnergyManagementSystem:Actuator Available, *,Zone,Outdoor Air Wetbulb Temperature,[C]
 EnergyManagementSystem:Actuator Available, *,Zone,Outdoor Air Wind Speed,[m/s]

@@ -296,7 +296,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    50;                      !- Field 4
+    20.4;                    !- Field 4
 
 Schedule:Compact,
     Heating,                 !- Name
@@ -304,7 +304,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    5;                       !- Field 4
+    20.4;                    !- Field 4
 
 Schedule:Compact,
     Cooling,                 !- Name
@@ -312,7 +312,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    50;                      !- Field 4
+    20.4;                    !- Field 4
 
 Schedule:Compact,
     Heating_2,               !- Name
@@ -320,7 +320,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    5;                       !- Field 4
+    20.4;                    !- Field 4
 
 Schedule:Compact,
     Cooling_3,               !- Name
@@ -1493,23 +1493,45 @@ SurfaceProperty:ConvectionCoefficients,
     M_SC,                    !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    13,                      !- Convection Coefficient 1 {W/m2-K}
+    50,                      !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    6.6;                     !- Convection Coefficient 2 {W/m2-K}
+    50;                      !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     M_SC2,                   !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    6.6,                     !- Convection Coefficient 1 {W/m2-K}
+    50,                      !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    13;                      !- Convection Coefficient 2 {W/m2-K}
+    50;                      !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    G_M2_i,                  !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    50,                      !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    50;                      !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    H_M2,                    !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    50,                      !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    50;                      !- Convection Coefficient 2 {W/m2-K}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: DESIGNSPECIFICATION:OUTDOORAIR ===========

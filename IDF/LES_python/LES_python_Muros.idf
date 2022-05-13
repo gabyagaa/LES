@@ -296,7 +296,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    50;                      !- Field 4
+    20.4;                    !- Field 4
 
 Schedule:Compact,
     Heating,                 !- Name
@@ -304,7 +304,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    5;                       !- Field 4
+    20.4;                    !- Field 4
 
 Schedule:Compact,
     Cooling,                 !- Name
@@ -312,7 +312,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    50;                      !- Field 4
+    20.4;                    !- Field 4
 
 Schedule:Compact,
     Heating_2,               !- Name
@@ -320,7 +320,7 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
-    5;                       !- Field 4
+    20.4;                    !- Field 4
 
 Schedule:Compact,
     Cooling_3,               !- Name
@@ -393,7 +393,7 @@ Material,
     Aluminio,                !- Name
     Smooth,                  !- Roughness
     0.005,                   !- Thickness {m}
-    250,                     !- Conductivity {W/m-K}
+    50,                      !- Conductivity {W/m-K}
     2800,                    !- Density {kg/m3}
     896,                     !- Specific Heat {J/kg-K}
     0.9,                     !- Thermal Absorptance
@@ -1003,9 +1003,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M1_i,                  !- Name
     Wall,                    !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     H_M1,                    !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -1099,9 +1099,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_M3_i,                  !- Name
     Wall,                    !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     H_M3,                    !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -1243,9 +1243,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_P_i,                   !- Name
     Ceiling,                 !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     H_Piso,                  !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -1291,9 +1291,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     G_T_i,                   !- Name
     Floor,                   !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_guarda,               !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     H_Techo,                 !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -1315,9 +1315,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     H_M1,                    !- Name
     Wall,                    !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_habitacion,           !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     G_M1_i,                  !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -1363,9 +1363,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     H_M3,                    !- Name
     Wall,                    !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_habitacion,           !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     G_M3_i,                  !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -1387,9 +1387,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     H_Piso,                  !- Name
     Floor,                   !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_habitacion,           !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     G_P_i,                   !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -1411,9 +1411,9 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     H_Techo,                 !- Name
     Ceiling,                 !- Surface Type
-    LaminaNOMASS,            !- Construction Name
+    Paredes_gen,             !- Construction Name
     TZ_habitacion,           !- Zone Name
-    Adiabatic,               !- Outside Boundary Condition
+    Surface,                 !- Outside Boundary Condition
     G_T_i,                   !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
@@ -1493,23 +1493,133 @@ SurfaceProperty:ConvectionCoefficients,
     M_SC,                    !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    13,                      !- Convection Coefficient 1 {W/m2-K}
+    10,                      !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    6.6;                     !- Convection Coefficient 2 {W/m2-K}
+    100;                     !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     M_SC2,                   !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    6.6,                     !- Convection Coefficient 1 {W/m2-K}
+    10,                      !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    13;                      !- Convection Coefficient 2 {W/m2-K}
+    100;                     !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    G_M1_i,                  !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    100,                     !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    2;                       !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    H_M1,                    !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    2,                       !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    100;                     !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    G_M2_i,                  !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    100,                     !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    2;                       !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    H_M2,                    !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    2,                       !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    100;                     !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    G_M3_i,                  !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    100,                     !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    2;                       !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    H_M3,                    !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    2,                       !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    100;                     !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    G_P_i,                   !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    100,                     !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    2;                       !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    H_Piso,                  !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    2,                       !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    100;                     !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    G_T_i,                   !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    100,                     !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    2;                       !- Convection Coefficient 2 {W/m2-K}
+
+SurfaceProperty:ConvectionCoefficients,
+    H_Techo,                 !- Surface Name
+    Inside,                  !- Convection Coefficient 1 Location
+    Value,                   !- Convection Coefficient 1 Type
+    2,                       !- Convection Coefficient 1 {W/m2-K}
+    ,                        !- Convection Coefficient 1 Schedule Name
+    ,                        !- Convection Coefficient 1 User Curve Name
+    Outside,                 !- Convection Coefficient 2 Location
+    Value,                   !- Convection Coefficient 2 Type
+    100;                     !- Convection Coefficient 2 {W/m2-K}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: DESIGNSPECIFICATION:OUTDOORAIR ===========
