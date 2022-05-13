@@ -17,3 +17,7 @@ con el muro opuesto al sc sin condición adiabática, con masa térmica y sc de 
 
 2022 04 05
 *2022_04_05_EpLES_Mopuesto.png: igual al análisis 2022_03_31_EpLES_Mopuesto.png pero el material del muro opuesto se cambió a aluminio y el calling point a bigin timestep before init heat balance.
+
+*2022_05_13_coeficientesh: gráfica de simulacción con coefficientes convectivos de 100 y 10 en SC y 100 y 2 en habitación.
+*2022_05_13_coeficientesh: gráfica de simulación cambiando conductividad de aluminio de 250 a 50 y de poliuretano de 0.035 a 0.12
+*2022_05_113_conductividad_y_coeficienteh: gráfica cambiando el coeficiente convectivo y las conductividades de aluminio y poliuretano.
