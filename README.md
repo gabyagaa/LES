@@ -13,3 +13,6 @@
 
 2022 04 05
 *Análisis del cambio del muro opuesto al sistema constructivo. Se modificó el material a muros_gen (aluminio) y el calling point a Begin Zone Timestep Before Init Heat Balance. Gráfica 2022_04_05_EpLES_Mopuesto.png.
+
+2022 05 13
+*Pruebas cambiando el coeficiente convectivo y las propiedades del aluminio. Graficas: propiedades_y_coeficienteh, sin_coeficiente_h, sin_propiedades.
