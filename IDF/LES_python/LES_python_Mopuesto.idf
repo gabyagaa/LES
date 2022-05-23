@@ -393,7 +393,7 @@ Material,
     Aluminio,                !- Name
     Smooth,                  !- Roughness
     0.005,                   !- Thickness {m}
-    250,                     !- Conductivity {W/m-K}
+    5,                       !- Conductivity {W/m-K}
     2800,                    !- Density {kg/m3}
     896,                     !- Specific Heat {J/kg-K}
     0.9,                     !- Thermal Absorptance
@@ -479,6 +479,14 @@ Material:NoMass,
     Smooth,                  !- Roughness
     0.001,                   !- Thermal Resistance {m2-K/W}
     0.0000001,               !- Thermal Absorptance
+    0.7,                     !- Solar Absorptance
+    0.7;                     !- Visible Absorptance
+
+Material:NoMass,
+    LaminaMopuesto,          !- Name
+    Smooth,                  !- Roughness
+    0.001,                   !- Thermal Resistance {m2-K/W}
+    0.9,                     !- Thermal Absorptance
     0.7,                     !- Solar Absorptance
     0.7;                     !- Visible Absorptance
 
@@ -698,6 +706,10 @@ Construction,
 Construction,
     LaminaNOMASS,            !- Name
     LaminaNM;                !- Outside Layer
+
+Construction,
+    LaminaMopuesto,          !- Name
+    LaminaMopuesto;          !- Outside Layer
 
 
 !-   ===========  ALL OBJECTS IN CLASS: GLOBALGEOMETRYRULES ===========
@@ -1493,45 +1505,45 @@ SurfaceProperty:ConvectionCoefficients,
     M_SC,                    !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    50,                      !- Convection Coefficient 1 {W/m2-K}
+    13,                      !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    50;                      !- Convection Coefficient 2 {W/m2-K}
+    6.6;                     !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     M_SC2,                   !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    50,                      !- Convection Coefficient 1 {W/m2-K}
+    6.6,                     !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    50;                      !- Convection Coefficient 2 {W/m2-K}
+    13;                      !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     G_M2_i,                  !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    50,                      !- Convection Coefficient 1 {W/m2-K}
+    13,                      !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    50;                      !- Convection Coefficient 2 {W/m2-K}
+    6.6;                     !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     H_M2,                    !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    50,                      !- Convection Coefficient 1 {W/m2-K}
+    6.6,                     !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    50;                      !- Convection Coefficient 2 {W/m2-K}
+    13;                      !- Convection Coefficient 2 {W/m2-K}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: DESIGNSPECIFICATION:OUTDOORAIR ===========
