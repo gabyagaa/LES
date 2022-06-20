@@ -1505,45 +1505,45 @@ SurfaceProperty:ConvectionCoefficients,
     M_SC,                    !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    13,                      !- Convection Coefficient 1 {W/m2-K}
+    100,                     !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    6.6;                     !- Convection Coefficient 2 {W/m2-K}
+    5;                       !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     M_SC2,                   !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    6.6,                     !- Convection Coefficient 1 {W/m2-K}
+    5,                       !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    13;                      !- Convection Coefficient 2 {W/m2-K}
+    100;                     !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     G_M2_i,                  !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    13,                      !- Convection Coefficient 1 {W/m2-K}
+    100,                     !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    6.6;                     !- Convection Coefficient 2 {W/m2-K}
+    5;                       !- Convection Coefficient 2 {W/m2-K}
 
 SurfaceProperty:ConvectionCoefficients,
     H_M2,                    !- Surface Name
     Inside,                  !- Convection Coefficient 1 Location
     Value,                   !- Convection Coefficient 1 Type
-    6.6,                     !- Convection Coefficient 1 {W/m2-K}
+    5,                       !- Convection Coefficient 1 {W/m2-K}
     ,                        !- Convection Coefficient 1 Schedule Name
     ,                        !- Convection Coefficient 1 User Curve Name
     Outside,                 !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
-    13;                      !- Convection Coefficient 2 {W/m2-K}
+    100;                     !- Convection Coefficient 2 {W/m2-K}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: DESIGNSPECIFICATION:OUTDOORAIR ===========
