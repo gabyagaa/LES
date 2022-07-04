@@ -178,6 +178,20 @@ ScheduleTypeLimits,
     Continuous,              !- Numeric Type
     temperature;             !- Unit Type
 
+ScheduleTypeLimits,
+    temperatura_type,        !- Name
+    ,                        !- Lower Limit Value
+    ,                        !- Upper Limit Value
+    Discrete,                !- Numeric Type
+    Temperature;             !- Unit Type
+
+ScheduleTypeLimits,
+    typercontrol,            !- Name
+    ,                        !- Lower Limit Value
+    ,                        !- Upper Limit Value
+    Discrete,                !- Numeric Type
+    Dimensionless;           !- Unit Type
+
 
 !-   ===========  ALL OBJECTS IN CLASS: SCHEDULE:DAY:INTERVAL ===========
 
@@ -1775,13 +1789,48 @@ Schedule:Week:Daily,
     Small Office Infil Quarter On Default Schedule;  !- CustomDay2 Schedule:Day Name
 
 
+!-   ===========  ALL OBJECTS IN CLASS: SCHEDULE:COMPACT ===========
+
+Schedule:Compact,
+    heatingLES,              !- Name
+    temperatura_type,        !- Schedule Type Limits Name
+    Through: 01/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 3
+    22.34,                   !- Field 4
+    Through: 12/31,          !- Field 5
+    For: AllDays,            !- Field 6
+    Until: 24:00,            !- Field 7
+    13;                      !- Field 8
+
+Schedule:Compact,
+    coolingLES,              !- Name
+    temperatura_type,        !- Schedule Type Limits Name
+    Through: 01/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 3
+    22.34,                   !- Field 4
+    Through: 12/31,          !- Field 5
+    For: AllDays,            !- Field 6
+    Until: 24:00,            !- Field 7
+    50;                      !- Field 8
+
+Schedule:Compact,
+    controlLES,              !- Name
+    typercontrol,            !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until: 24:00,            !- Field 3
+    4;                       !- Field 4
+
+
 !-   ===========  ALL OBJECTS IN CLASS: MATERIAL ===========
 
 Material,
     EPS,                     !- Name
     Smooth,                  !- Roughness
     0.11,                    !- Thickness {m}
-    0.035,                   !- Conductivity {W/m-K}
+    0.02,                    !- Conductivity {W/m-K}
     25,                      !- Density {kg/m3}
     1400,                    !- Specific Heat {J/kg-K}
     0.0000001,               !- Thermal Absorptance
@@ -2064,6 +2113,41 @@ SurfaceProperty:ConvectionCoefficients,
     Inside,                  !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
     6.6;                     !- Convection Coefficient 2 {W/m2-K}
+! 
+! 
+!-   ===========  ALL OBJECTS IN CLASS: HVACTEMPLATE:ZONE:IDEALLOADSAIRSYSTEM ===========
+! 
+! HVACTemplate:Zone:IdealLoadsAirSystem,
+!     Thermal Zone 1 Thermal Zone,  !- Zone Name
+!     ,                        !- Template Thermostat Name
+!     ,                        !- System Availability Schedule Name
+!     50,                      !- Maximum Heating Supply Air Temperature {C}
+!     13,                      !- Minimum Cooling Supply Air Temperature {C}
+!     0.0156,                  !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+!     0.0077,                  !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+!     NoLimit,                 !- Heating Limit
+!     ,                        !- Maximum Heating Air Flow Rate {m3/s}
+!     ,                        !- Maximum Sensible Heating Capacity {W}
+!     NoLimit,                 !- Cooling Limit
+!     ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+!     ,                        !- Maximum Total Cooling Capacity {W}
+!     ,                        !- Heating Availability Schedule Name
+!     ,                        !- Cooling Availability Schedule Name
+!     ConstantSensibleHeatRatio,  !- Dehumidification Control Type
+!     0.7,                     !- Cooling Sensible Heat Ratio {dimensionless}
+!     60,                      !- Dehumidification Setpoint {percent}
+!     None,                    !- Humidification Control Type
+!     30,                      !- Humidification Setpoint {percent}
+!     None,                    !- Outdoor Air Method
+!     0.00944,                 !- Outdoor Air Flow Rate per Person {m3/s}
+!     ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+!     ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+!     ,                        !- Design Specification Outdoor Air Object Name
+!     None,                    !- Demand Controlled Ventilation Type
+!     NoEconomizer,            !- Outdoor Air Economizer Type
+!     None,                    !- Heat Recovery Type
+!     0.7,                     !- Sensible Heat Recovery Effectiveness {dimensionless}
+!     0.65;                    !- Latent Heat Recovery Effectiveness {dimensionless}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SIZING:PARAMETERS ===========
@@ -2071,6 +2155,24 @@ SurfaceProperty:ConvectionCoefficients,
 Sizing:Parameters,
     1.25,                    !- Heating Sizing Factor
     1.15;                    !- Cooling Sizing Factor
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONECONTROL:THERMOSTAT ===========
+
+ZoneControl:Thermostat,
+    ControlLES,              !- Name
+    Thermal Zone 1 Thermal Zone,  !- Zone or ZoneList Name
+    controlLES,              !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+    T_habitacion;            !- Control 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: THERMOSTATSETPOINT:DUALSETPOINT ===========
+
+ThermostatSetpoint:DualSetpoint,
+    T_habitacion,            !- Name
+    heatingLES,              !- Heating Setpoint Temperature Schedule Name
+    coolingLES;              !- Cooling Setpoint Temperature Schedule Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:NODE ===========
@@ -2115,4 +2217,55 @@ Output:Variable,
 
 Output:SQLite,
     SimpleAndTabular;        !- Option Type
+! 
+! -------------------------------------------------------------
+! New objects created from ExpandObjects
+! -------------------------------------------------------------
+! 
 
+ZoneHVAC:EquipmentConnections,
+  Thermal Zone 1 Thermal Zone,                             !- Zone Name
+  Thermal Zone 1 Thermal Zone Equipment,                   !- Zone Conditioning Equipment List Name
+  Thermal Zone 1 Thermal Zone Ideal Loads Supply Inlet,    !- Zone Air Inlet Node or NodeList Name
+  ,                                                        !- Zone Air Exhaust Node or NodeList Name
+  Thermal Zone 1 Thermal Zone Zone Air Node,               !- Zone Air Node Name
+  Thermal Zone 1 Thermal Zone Return Outlet;               !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentList,
+  Thermal Zone 1 Thermal Zone Equipment,                   !- Name
+  SequentialLoad,                                          !- Load Distribution Scheme
+  ZoneHVAC:IdealLoadsAirSystem,                            !- Zone Equipment Object Type
+  Thermal Zone 1 Thermal Zone Ideal Loads Air System,      !- Zone Equipment Name
+  1,                                                       !- Zone Equipment Cooling Sequence
+  1,                                                       !- Zone Equipment Heating or No-Load Sequence
+  ,                                                        !- Zone Equipment Sequential Cooling Fraction Schedule Name
+  ;                                                        !- Zone Equipment Sequential Heating Fraction Schedule Name
+
+ZoneHVAC:IdealLoadsAirSystem,
+  Thermal Zone 1 Thermal Zone Ideal Loads Air System,      !- Name
+  ,                                                        !- Availability Schedule Name
+  Thermal Zone 1 Thermal Zone Ideal Loads Supply Inlet,    !- Zone Supply Air Node Name
+  ,                                                        !- Zone Exhaust Air Node Name
+  ,                                                        !- System Inlet Air Node Name
+  50,                                                      !- Maximum Heating Supply Air Temperature [C]
+  13,                                                      !- Minimum Cooling Supply Air Temperature [C]
+  0.0156,                                                  !- Maximum Heating Supply Air Humidity Ratio [kg-H20/kg-air]
+  0.0077,                                                  !- Minimum Cooling Supply Air Humidity Ratio [kg-H20/kg-air]
+  NoLimit,                                                 !- Heating Limit
+  ,                                                        !- Maximum Heating Air Flow Rate {m3/s}
+  ,                                                        !- Maximum Sensible Heating Capacity {m3/s}
+  NoLimit,                                                 !- Cooling Limit
+  ,                                                        !- Maximum Cooling Air Flow Rate {m3/s}
+  ,                                                        !- Maximum Total Cooling Capacity {m3/s}
+  ,                                                        !- Heating Availability Schedule Name
+  ,                                                        !- Cooling Availability Schedule Name
+  ConstantSensibleHeatRatio,                               !- Dehumidification Control Type
+  0.7,                                                     !- Cooling Sensible Heat Ratio
+  None,                                                    !- Humidification Control Type
+  ,                                                        !- Design Specification Outdoor Air Object Name
+  ,                                                        !- Outdoor Air Inlet Node Name
+  None,                                                    !- Demand Controlled Ventilation Type
+  NoEconomizer,                                            !- Outdoor Air Economizer Type
+  None,                                                    !- Heat Recovery Type
+  0.7,                                                     !- Sensible Heat Recovery Effectiveness
+  0.65;                                                    !- Latent Heat Recovery Effectiveness
