@@ -75,11 +75,11 @@ RunPeriod,
     Run Period 1,            !- Name
     1,                       !- Begin Month
     25,                      !- Begin Day of Month
-    2006,                    !- Begin Year
+    ,                        !- Begin Year
     2,                       !- End Month
     1,                       !- End Day of Month
-    2006,                    !- End Year
-    Wednesday,               !- Day of Week for Start Day
+    ,                        !- End Year
+    ,                        !- Day of Week for Start Day
     No,                      !- Use Weather File Holidays and Special Days
     No,                      !- Use Weather File Daylight Saving Period
     No,                      !- Apply Weekend Holiday Rule
@@ -1830,8 +1830,8 @@ Material,
     EPS,                     !- Name
     Smooth,                  !- Roughness
     0.11,                    !- Thickness {m}
-    0.02,                    !- Conductivity {W/m-K}
-    25,                      !- Density {kg/m3}
+    0.035,                   !- Conductivity {W/m-K}
+    50,                      !- Density {kg/m3}
     1400,                    !- Specific Heat {J/kg-K}
     0.0000001,               !- Thermal Absorptance
     0.3,                     !- Solar Absorptance
@@ -2102,17 +2102,6 @@ SurfaceProperty:ConvectionCoefficients,
     Inside,                  !- Convection Coefficient 2 Location
     Value,                   !- Convection Coefficient 2 Type
     6.6;                     !- Convection Coefficient 2 {W/m2-K}
-
-SurfaceProperty:ConvectionCoefficients,
-    Surface 4,               !- Surface Name
-    Outside,                 !- Convection Coefficient 1 Location
-    Value,                   !- Convection Coefficient 1 Type
-    13,                      !- Convection Coefficient 1 {W/m2-K}
-    ,                        !- Convection Coefficient 1 Schedule Name
-    ,                        !- Convection Coefficient 1 User Curve Name
-    Inside,                  !- Convection Coefficient 2 Location
-    Value,                   !- Convection Coefficient 2 Type
-    6.6;                     !- Convection Coefficient 2 {W/m2-K}
 ! 
 ! 
 !-   ===========  ALL OBJECTS IN CLASS: HVACTEMPLATE:ZONE:IDEALLOADSAIRSYSTEM ===========
@@ -2210,6 +2199,16 @@ Output:Variable,
 Output:Variable,
     *,                       !- Key Value
     Zone Mean Air Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Surface 2,               !- Key Value
+    Surface Inside Face Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    Surface 2,               !- Key Value
+    Surface Outside Face Temperature,  !- Variable Name
     Timestep;                !- Reporting Frequency
 
 
